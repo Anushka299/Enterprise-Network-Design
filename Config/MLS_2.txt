@@ -1,0 +1,191 @@
+Building configuration...
+
+Current configuration : 2902 bytes
+!
+version 12.2(37)SE1
+service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname MLS_2
+!
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+username Anushka password 0 1234
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ftp username Anushka
+ip ftp password 123
+ip ssh version 1
+ip domain-name test.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 2.1.2.1 255.255.255.255
+!
+interface FastEthernet0/1
+ switchport trunk allowed vlan 20,30,40,50,60,90,200
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ switchport trunk allowed vlan 10,90,100,200
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+ no switchport
+ ip address 172.16.2.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ mac-address 00e0.8f79.3501
+ ip address 192.168.10.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan20
+ mac-address 00e0.8f79.3502
+ ip address 192.168.20.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan30
+ mac-address 00e0.8f79.3503
+ ip address 192.168.30.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan40
+ mac-address 00e0.8f79.3504
+ ip address 192.168.40.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan50
+ mac-address 00e0.8f79.3505
+ ip address 192.168.50.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan60
+ mac-address 00e0.8f79.3506
+ ip address 192.168.60.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan90
+ mac-address 00e0.8f79.3507
+ ip address 192.168.90.1 255.255.255.0
+!
+interface Vlan100
+ mac-address 00e0.8f79.3508
+ ip address 192.168.100.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan200
+ mac-address 00e0.8f79.3509
+ ip address 192.168.200.1 255.255.255.0
+ ip helper-address 192.168.100.100
+!
+interface Vlan300
+ mac-address 00e0.8f79.350a
+ no ip address
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 172.16.2.2 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+logging trap debugging
+logging 192.168.100.200
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+end
